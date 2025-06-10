@@ -71,7 +71,7 @@ export const Contactlist = () => {
                                         <td>{item.mobile}</td>
                                         <td>{item.message}</td>
                                         <td>
-                                            <Link to={'/edit/${item.id}'} className='btn btn-success'>Edit</Link>&nbsp;
+                                            <Link to={`/edit/${item.id}`} className='btn btn-success'>Edit</Link>&nbsp;
                                             <a href="#" className='btn btn-danger' onClick={() => { deleterecord(item.id) }}>Delete</a>
                                         </td>
                                     </tr>

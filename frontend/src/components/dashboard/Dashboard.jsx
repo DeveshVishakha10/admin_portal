@@ -35,30 +35,11 @@ export const Dashboard = () => {
 
   return (
     <>
-      {console.log("render")}
-      <div style={{ textAlign: 'center' }}>
-        <div>Dashboard</div>
-        <br />
-        {state}
-        <br /><br />
-        <input type="submit" value="Decrement" onClick={decrement} />
-        <input type="submit" value="Increment" onClick={increment} style={{ marginLeft: "2%" }} />
-        <br />
-        {color}
-        <br /><br />
-        <input type="submit" value="Change Color" onClick={colorchange} />
-        <br /><br />
+      <header>
+        
+      </header>
 
-        <input type="submit" value="Get Live Data" onClick={getlivedata} />
-        <br /><br />
-        <ul>
-          {
-            store.map((item, index) =>
-              <li>{"My Id is:" + item.id + " " + item.title}</li>
-            )
-          }
-        </ul>
-      </div>
+
     </>
   )
 }

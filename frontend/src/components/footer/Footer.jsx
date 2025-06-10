@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div style={{backgroundColor:"darkgrey",height:"300px", marginTop:"30px"}}></div>
+    <div style={{backgroundColor:"red",height:"100px", marginTop:"200px"}}></div>
   )
 }

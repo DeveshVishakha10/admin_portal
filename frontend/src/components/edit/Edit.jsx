@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+
 
 
 export const Edit = () => {
@@ -11,25 +12,40 @@ export const Edit = () => {
         mobile: "",
         message: ""
     })
-    const { id } = useParams();
+    const {id} = useParams();
+
+    const _useNavigate=useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:3004/contact/")
-            .then((res) => {console.log(res);})
+        axios.get("http://localhost:3004/contact/"+id)
+            .then((res) => {
+                // console.log(res);
+                setState(res.data)
 
-    }, []);
+            })
+
+    },[]);
 
 
     const handleChange = (event) => {
+        const{name,value}=event.target;
+        setState({...state,[name]:value})
+
 
     }
 
     const updatedata = (event) => {
+        event.preventDefault();
+        axios.put("http://localhost:3004/contact/"+id,state)
+            .then((res) => {console.log(res);
+                _useNavigate("/contactlist")
+
+            })
 
     }
     return (
         <div className="container mt-5">
-            <h3 className="mb-4">Contact Us</h3>
+            <h3 className="mb-4" style={{textAlign:'center'}}>Update Here</h3>
             <form onSubmit={updatedata}>
                 <div className="row g-3 mb-3">
                     <div className="col-md-6">
@@ -89,7 +105,7 @@ export const Edit = () => {
                         ></textarea>
                     </div>
                 </div>
-                <button type="submit" className="btn btn-success">Submit</button>
+                <button type="submit" className="btn btn-success">Update</button>
             </form>
 
         </div>

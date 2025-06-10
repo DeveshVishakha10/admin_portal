@@ -9,6 +9,8 @@ import { Contact } from './components/contact/Contact';
 import { Pagenotfound } from './components/pagenotfound/Pagenotfound'
 import { Contactlist } from './components/contactlist/Contactlist'
 import { Edit } from './components/edit/Edit';
+import { Admin } from './components/admin/Admin';
+
 
 
 
@@ -20,6 +22,7 @@ function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="admin" element={<Admin />} />
         <Route path="contactlist" element={<Contactlist />} />
         <Route path="edit/:id" element={<Edit />} />
         <Route path="*" element={<Pagenotfound />} />
