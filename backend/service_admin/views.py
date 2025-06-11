@@ -4,6 +4,7 @@ from rest_framework import authentication,permissions
 from django.contrib.auth.models import User
 from .serializers import RegisterSerializer
 from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
 
 
 class RegisterView(APIView):
@@ -18,3 +19,14 @@ class RegisterView(APIView):
                              status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class LoginView(APIView):
+    def post(self,request):
+        data=request.data
+        username=data.get('username')
+        password=data.get('password')
+        user=User.objects.filter(username=username).first()
+        if user and user.check_password(password):
+            refresh=RefreshToken.for_user(user)
+            return Response({"access_token"
+            ""
+            })
