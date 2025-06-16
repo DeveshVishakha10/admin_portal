@@ -3,19 +3,22 @@ import { Link } from 'react-router-dom'
 import '../../header.css';
 
 export const Header = () => {
+  const Welcome = ({ name }) => {
+    return <div> Welcome to Vishakha Admin portal, {name}!</div>;
+  };
   return (
     <>
       <div className="header-container">
         <img src="/images.png" alt="Vishakha Polyfab" className="logo" />
         <div className="marquee-wrapper">
           <div className="welcome-text">
-            Welcome to Vishakha Admin portal
+            <Welcome name="Devesh" />
           </div>
         </div>
       </div>
+      
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          {/* <a className="navbar-brand" href="#">Navbar</a> */}
+        <div className="container-fluid" style={{}}>
           <button
             className="navbar-toggler"
             type="button"
@@ -31,16 +34,28 @@ export const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" to="Dashboard">
-                  Home
+                <img
+                  src="/help-desk_4939493.png"
+                  alt="Helpdesk"
+                  style={{ width: '40px', height: '40px', marginLeft: '15px' }}
+                />
+                <Link className="nav-link active custom-link" to="Dashboard">
+                  Helpdesk
                 </Link>
               </li>
+
               <li className="nav-item">
-                <Link className="nav-link" to="about">
-                  About Us
+                <img
+                  src="/meeting-room_1693663.png"
+                  alt="Helpdesk"
+                  style={{ width: '40px', height: '40px', marginLeft: '45px' }}
+                />
+                <Link className="nav-link custom-link" to="about">
+                  Conference Room
                 </Link>
               </li>
-              <li className="nav-item dropdown">
+
+              {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
@@ -70,17 +85,64 @@ export const Header = () => {
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li className="nav-item">
-                <Link className="nav-link" to="contact">
-                  Contact
-                </Link>
-                <Link className="nav-link" to="admin">
-                  Admin
+                <img
+                  src="/spoon_995802.png"
+                  alt="Canteen"
+                  style={{ width: '40px', height: '40px', marginLeft: '15px' }}
+                />
+                <Link className="nav-link custom-link" to="contact">
+                  Canteen
                 </Link>
               </li>
+
+              <li className="nav-item">
+                <img
+                  src="/book_2682678.png"
+                  alt="Cab book"
+                  style={{ width: '40px', height: '40px', marginLeft: '15px' }}
+                />
+                <Link className="nav-link custom-link" to="contact">
+                  Cab Book
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <img
+                  src="/inventory_18546538.png"
+                  alt="Inventory"
+                  style={{ width: '40px', height: '40px', marginLeft: '15px' }}
+                />
+                <Link className="nav-link custom-link" to="contact">
+                  Inventory
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <img
+                  src="/stapler_6436685.png"
+                  alt="Stationery & Printing"
+                  style={{ width: '40px', height: '40px', marginLeft: '15px' }}
+                />
+                <Link className="nav-link custom-link" to="contact">
+                  Stationery & Printing
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <img
+                  src="/admin.png"
+                  alt="Admin"
+                  style={{ width: '40px', height: '40px',marginLeft:'630px'}}
+                />
+                <Link className="nav-link custom-link" to="admin" style={{marginLeft:'595px'}}>
+                  Admin login
+                </Link>
+              </li>
+
             </ul>
-            <form className="d-flex" role="search">
+            {/* <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
@@ -90,7 +152,7 @@ export const Header = () => {
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       </nav>
