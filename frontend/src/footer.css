@@ -1,4 +1,4 @@
-.header-container {
+.footer-container {
   
   display: flex;
   align-items: center;
@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-.logo {
+/* .logo {
   
   width: 150px;
   height: 100%;
@@ -21,7 +21,7 @@
   flex: 1;
   position: relative;
   overflow: hidden;
-  height: 100%; /* Important to give it height */
+  height: 100%; 
   margin-left: 20px;
 }
 
@@ -47,11 +47,11 @@
 }
 
 .custom-link {
-  color: black !important; /* override Bootstrap default */
+  color: black !important; 
   text-decoration: none;
   
 }
 
 .custom-link:hover {
   color: red !important;
-}
+} */
